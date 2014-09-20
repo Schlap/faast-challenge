@@ -4,23 +4,21 @@ require 'gantry'
 
 describe Passenger do
 
-	it "should be created after initializing" do
-		passenger = Passenger.new
+	let(:station) {Station.new}
+	let(:passenger) {Passenger.new}
+	let(:gantry) {Gantry.new}
+
+	it "should be created" do
 		expect(passenger).to be_created
 	end
 
-	it "should be able to enter station" do
-		station = Station.new
-		passenger = Passenger.new
+	it "should be able to enter the station" do
 		passenger.enter(station)
 		expect(passenger.enter(station)).to eq(true)
 	end
 
 
-	it "should be able to touch in at the gantry" do
-		station = Station.new
-		passenger = Passenger.new
-		gantry = Gantry.new
+	it "should be able to touch in at a gantry" do
 		passenger.touch_in(gantry)
 		expect(passenger.touch_in(gantry)).to eq(true)
 	end
