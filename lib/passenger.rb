@@ -1,6 +1,10 @@
 class Passenger
 
 	def created?
-		true
+		@created = true
+	end
+
+	def enter(station)
+		@inside_station = true
 	end
 end
