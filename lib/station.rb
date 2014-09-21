@@ -22,4 +22,8 @@ end
 def disembark(train)
 	@trains.delete(train)
 	end
+
+def full?
+	train_count == @capacity
+	end
 end
