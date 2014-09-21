@@ -16,6 +16,7 @@ def train_count
 end
 
 def recieve(train)
+	raise "Station cannot recieve anymore trains!" if full?
 	@trains << train
 end
 

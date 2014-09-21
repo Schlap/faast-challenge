@@ -24,4 +24,9 @@ describe Station do
 		20.times{station.recieve(train)}
 		expect(station).to be_full
 	end
+
+	it "should not accept a train if it's full" do
+		20.times{station.recieve(train)}
+		expect{station.recieve(train)}.to raise_error(RuntimeError)
+	end
 end
