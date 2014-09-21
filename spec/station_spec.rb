@@ -33,4 +33,12 @@ describe Station do
 		fill_station(station)
 		expect{station.recieve(train)}.to raise_error(RuntimeError)
 	end
+
+	#it "should provide a list of trains that are on time and trains that are late" do
+		#trains_on_time, trains_not_on_time = Train.new, Train.new
+		#trains_not_on_time.late!
+		#station.recieve(trains_on_time)
+		#station.recieve(trains_not_on_time)
+		#expect(station.train_times).to eq([trains_on_time, trains_not_on_time])
+	#end
 end

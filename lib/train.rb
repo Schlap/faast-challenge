@@ -1,4 +1,10 @@
 class Train
-	def holding_passengers?
-	end
+
+def empty?
+	@empty = true
 end
+end
+
+#def late!
+		#@late = true
+	#end

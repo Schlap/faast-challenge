@@ -22,9 +22,13 @@ end
 
 def disembark(train)
 	@trains.delete(train)
-	end
+end
 
 def full?
 	train_count == @capacity
 	end
+
+#def train_times
+	#@train_times = [trains_on_time = Train.new, trains_not_on_time = Train.new.late!]
+	#end
 end
