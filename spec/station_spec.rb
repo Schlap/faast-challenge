@@ -4,6 +4,10 @@ require 'train'
 
 describe Station do
 
+	def fill_station(station)
+		20.times{station.recieve(train)}
+	end
+
 	let(:train) {Train.new}
 	let(:station) {Station.new(:capacity => 20)}
 
@@ -21,12 +25,12 @@ describe Station do
 
 	it "should know when it's full" do
 		expect(station).not_to be_full
-		20.times{station.recieve(train)}
+		fill_station(station)
 		expect(station).to be_full
 	end
 
 	it "should not accept a train if it's full" do
-		20.times{station.recieve(train)}
+		fill_station(station)
 		expect{station.recieve(train)}.to raise_error(RuntimeError)
 	end
 end
