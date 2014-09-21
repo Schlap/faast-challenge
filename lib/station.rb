@@ -17,4 +17,8 @@ end
 def recieve(train)
 	@trains << train
 end
+
+def disembark(train)
+	@trains.delete(train)
+	end
 end
