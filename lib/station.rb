@@ -1,14 +1,15 @@
 class Station
 
-DEFAULT_CAPACITY = 20
+DEFAULT_CAPACITY = 12
 
 def initialize
 	@trains = []
 end
 
-def station_capacity
-@capacity = DEFAULT_CAPACITY
-	end
+def initialize(options = {})
+	@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
+	@trains = []
+end
 
 def train_count
 	@trains.count
