@@ -11,4 +11,8 @@ class Passenger
 	def touch_in(gantry)
 		enter(gantry)
 	end		
+
+	def touch_out(gantry)
+		enter(gantry)
+	end
 end

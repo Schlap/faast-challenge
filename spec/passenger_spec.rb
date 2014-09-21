@@ -22,4 +22,9 @@ describe Passenger do
 		passenger.touch_in(gantry)
 		expect(passenger.touch_in(gantry)).to eq(true)
 	end
+
+	it "should be able to touch out at a gantry" do
+		passenger.touch_out(gantry)
+		expect(passenger.touch_out(gantry)).to eq(true)
+	end
 end
