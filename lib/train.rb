@@ -1,7 +1,11 @@
 class Train
 
-def empty?
-	@empty = true
+def passenger_count
+	@passenger_count = 0
+end
+
+def coaches
+	@coaches = [[],[],[],[]]
 end
 end
 
