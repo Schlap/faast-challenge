@@ -1,4 +1,5 @@
 require 'train'
+require 'passenger'
 
 describe Train do
 	
@@ -8,9 +9,17 @@ describe Train do
 	end
 
 	it "should have 4 coaches after we initialize it" do
+		passenger = Passenger.new
 		train = Train.new 
-		expect(train.coaches).to eq([[],[],[],[]])
-end
+		expect(train.coaches(passenger)).to eq([[],[],[],[]])
+	end
+
+	it "should be able to alight passengers" do 
+		train = Train.new
+		passenger = Passenger.new
+		train.alight(passenger)
+		expect(train.passenger_count).to eq(0)
+	end
 end
 
 
