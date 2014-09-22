@@ -1,6 +1,9 @@
 class Train
 
-	def initialize
+	DEFAULT_CAPACITY = 40
+
+	def initialize(options = {})
+		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
 		@passengers = []
 	end
 
@@ -14,5 +17,9 @@ class Train
 
 	def release(passenger)
 		@passengers.delete(passenger)
+	end
+
+	def full?
+		passenger_count == @capacity
 	end
 end
