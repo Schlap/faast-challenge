@@ -31,6 +31,5 @@ let(:coach) {double :coach}
 	it "should not accept a passenger when it is full" do
 	fill_train(train)
 	expect{train.alight(passenger)}.to raise_error(RuntimeError)
-
 	end
 end

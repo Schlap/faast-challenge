@@ -7,6 +7,7 @@ class Train
 		@coach0 = []
 		@coach1 = []
 		@coach2 = []
+		@coach3 = []
 	end
 
 	def passenger_count
@@ -20,6 +21,7 @@ class Train
 		@coach0 << passenger
 		@coach1 << passenger
 		@coach2 << passenger
+		@coach3 << passenger
 
 	end
 
@@ -27,6 +29,7 @@ class Train
 		@coach0.delete(passenger)
 		@coach1.delete(passenger)
 		@coach2.delete(passenger)
+		@coach3.delete(passenger)
 	end
 
 	def full?
