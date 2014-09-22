@@ -1,6 +1,14 @@
 class Train
 
-def passenger_count
-	0
+	def initialize
+		@passengers = []
+	end
+
+	def passenger_count
+		@passengers.count
+	end
+
+	def alight(passenger)
+		@passengers << passenger
 	end
 end
