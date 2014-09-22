@@ -22,4 +22,9 @@ let(:passenger) {double :passenger}
 	40.times{train.alight(passenger)}
 	expect(train.full?).to eq(true)
 	end
+
+	it "should not accept a passenger when it is full" do
+	40.times{train.alight(passenger)}
+	expect{train.alight(passenger)}.to raise_error(RuntimeError)
+	end
 end

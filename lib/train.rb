@@ -12,6 +12,7 @@ class Train
 	end
 
 	def alight(passenger)
+		raise "Sorry, we're full!" if full?
 		@passengers << passenger
 	end
 
