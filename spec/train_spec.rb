@@ -4,6 +4,7 @@ describe Train do
 
 let(:train){Train.new(:capacity => 40)}
 let(:passenger) {double :passenger}
+let(:coach) {double :coach}
 
 	def fill_train(train)
 	40.times{train.alight(passenger)}
@@ -30,5 +31,9 @@ let(:passenger) {double :passenger}
 	it "should not accept a passenger when it is full" do
 	fill_train(train)
 	expect{train.alight(passenger)}.to raise_error(RuntimeError)
+	end
+
+	it "should have multiple coaches" do
+	
 	end
 end

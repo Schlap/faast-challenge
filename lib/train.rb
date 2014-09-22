@@ -4,23 +4,26 @@ class Train
 
 	def initialize(options = {})
 		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
-		@passengers = []
+		@coach = []
 	end
 
 	def passenger_count
-		@passengers.count
+		@coach.count
 	end
 
 	def alight(passenger)
 		raise "Sorry, we're full!" if full?
-		@passengers << passenger
+		@coach << passenger
 	end
 
 	def release(passenger)
-		@passengers.delete(passenger)
+		@coach.delete(passenger)
 	end
 
 	def full?
 		passenger_count == @capacity
+	end
+
+	def add(coach)
 	end
 end
