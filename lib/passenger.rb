@@ -8,11 +8,19 @@ class Passenger
 		@inside_station = true
 	end
 
-	def touch_in(gantry)
-		enter(gantry)
+	def touch_in(station)
+		enter(station)
 	end		
 
-	def touch_out(gantry)
-		enter(gantry)
+	def touch_out(station)
+		enter(station)
+	end
+
+	def account
+		@account = 20
+	end
+
+	def charge
+		@account =-2
 	end
 end

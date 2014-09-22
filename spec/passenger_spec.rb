@@ -1,30 +1,32 @@
 require 'passenger'
-require 'station'
-require 'gantry'
 
 describe Passenger do
 
-	let(:station) {Station.new}
+	let(:station) {double :station, charge: true}
 	let(:passenger) {Passenger.new}
-	let(:gantry) {Gantry.new}
 
 	it "should be created" do
 		expect(passenger).to be_created
-	end
+		end
 
-	it "should be able to enter the station" do
+		it "should be able to enter the station" do
 		passenger.enter(station)
 		expect(passenger.enter(station)).to eq(true)
-	end
+		end
 
 
-	it "should be able to touch in at a gantry" do
-		passenger.touch_in(gantry)
-		expect(passenger.touch_in(gantry)).to eq(true)
-	end
+		it "should be able to touch in at a station" do
+		passenger.touch_in(station)
+		expect(passenger.touch_in(station)).to eq(true)
+		end
 
-	it "should be able to touch out at a gantry" do
-		passenger.touch_out(gantry)
-		expect(passenger.touch_out(gantry)).to eq(true)
-	end
+		it "should be able to touch out at a station" do
+		passenger.touch_out(station)
+		expect(passenger.touch_out(station)).to eq(true)
+		end
+
+		it "should be able to charge passengers at station" do
+		expect(passenger.account).to eq(20)
+		station.charge(passenger)
+		end
 end
