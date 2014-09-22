@@ -5,6 +5,10 @@ describe Train do
 let(:train){Train.new(:capacity => 40)}
 let(:passenger) {double :passenger}
 
+	def fill_train(train)
+	40.times{train.alight(passenger)}
+	end
+
 	it "should be empty after we initialize it" do
 	expect(train.passenger_count).to eq(0)
 	end
@@ -19,12 +23,12 @@ let(:passenger) {double :passenger}
 	end
 
 	it "should know when it is full" do
-	40.times{train.alight(passenger)}
+	fill_train(train)
 	expect(train.full?).to eq(true)
 	end
 
 	it "should not accept a passenger when it is full" do
-	40.times{train.alight(passenger)}
+	fill_train(train)
 	expect{train.alight(passenger)}.to raise_error(RuntimeError)
 	end
 end
