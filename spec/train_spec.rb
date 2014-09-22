@@ -12,4 +12,9 @@ let(:passenger) {double :passenger}
 	it "should be able to alight passenger" do
 	expect{train.alight(passenger)}.to change{train.passenger_count}.by 1
 	end
+
+	it "should be able to release passenger" do
+	train.alight(passenger)
+	expect{train.release(passenger)}.to change{train.passenger_count}.by -1
+	end
 end

@@ -11,4 +11,8 @@ class Train
 	def alight(passenger)
 		@passengers << passenger
 	end
+
+	def release(passenger)
+		@passengers.delete(passenger)
+	end
 end
